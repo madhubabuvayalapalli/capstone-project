@@ -1,0 +1,117 @@
+<div class="register-container">
+  <h2>Register as Customer</h2>
+  
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+
+    <div class="form-group">
+      <label for="name">Full Name *</label>
+      <input 
+        type="text" 
+        id="name"
+        [(ngModel)]="customer.name" 
+        name="name" 
+        required 
+        minlength="2"
+        [disabled]="isSubmitting"
+        class="form-control" 
+        placeholder="Enter your full name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input 
+        type="email" 
+        id="email"
+        [(ngModel)]="customer.email" 
+        name="email" 
+        required 
+        [disabled]="isSubmitting"
+        class="form-control" 
+        placeholder="Enter your email address" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input 
+        type="tel" 
+        id="phone"
+        [(ngModel)]="customer.phone" 
+        name="phone" 
+        required 
+        minlength="10"
+        [disabled]="isSubmitting"
+        class="form-control" 
+        placeholder="Enter your phone number" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password *</label>
+      <input 
+        type="password" 
+        id="password"
+        [(ngModel)]="customer.password" 
+        name="password" 
+        required 
+        minlength="6"
+        [disabled]="isSubmitting"
+        class="form-control" 
+        placeholder="Enter your password (min 6 characters)" />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input 
+        type="text" 
+        id="address"
+        [(ngModel)]="customer.address" 
+        name="address" 
+        [disabled]="isSubmitting"
+        class="form-control" 
+        placeholder="Enter your address (optional)" />
+    </div>
+
+    <div class="form-group">
+      <label for="dateofBirth">Date of Birth *</label>
+      <input 
+        type="date" 
+        id="dateofBirth"
+        [(ngModel)]="customer.dateofBirth" 
+        name="dateofBirth" 
+        required 
+        [disabled]="isSubmitting"
+        class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="cib">CIBIL Score *</label>
+      <input 
+        type="number" 
+        id="cib"
+        [(ngModel)]="customer.cib" 
+        name="cib" 
+        required 
+        min="300"
+        max="900"
+        [disabled]="isSubmitting"
+        class="form-control" 
+        placeholder="Enter your CIBIL score (300-900)" />
+    </div>
+
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        [disabled]="isSubmitting || !registerForm.form.valid"
+        class="btn btn-primary">
+       
+        <span *ngIf="!isSubmitting">Register</span>
+      </button>
+      
+    
+    </div>
+  </form>
+</div>

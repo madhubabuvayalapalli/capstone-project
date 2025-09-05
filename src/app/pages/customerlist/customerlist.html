@@ -1,0 +1,37 @@
+<p>customerlist works!</p>
+<div class="customer-container">
+  <h2>Customer List</h2>
+
+  <div *ngIf="loading">Loading...</div>
+ 
+
+  <table *ngIf="!loading && customers.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        <th>CIBIL Score</th>
+        <th>Registration Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.customerID }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.dateofBirth }}</td>
+        <td>{{ customer.cib }}</td>
+        <td>{{ customer.registrationDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!loading && customers.length === 0">No customers found.</p>
+</div>
+

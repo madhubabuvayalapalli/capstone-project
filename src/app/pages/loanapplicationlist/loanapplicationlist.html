@@ -1,0 +1,34 @@
+<p>loanapplicationlist works!</p>
+<div class="list-container">
+  <h2>Loan Applications</h2>
+  <table> 
+        <thead>
+      <tr>
+        <th>Application ID</th>
+        <th>Customer ID</th>
+        <th>Loan Amount</th>
+        <th>Application Date</th>
+        <th>Status</th>
+        <th>Remarks</th>
+        <th>File Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loan of loanApplications">
+        <td>{{ loan.applicationid }}</td>
+        <td>{{ loan.customerID }}</td>
+        <td>{{ loan.loanamount }}</td>
+        <td>{{ loan.applicationdate }}</td>
+        <td>{{ loan.status }}</td>
+        <td>{{ loan.remarks }}</td>
+        <td>
+          <a *ngIf="loan.filelink" [href]="loan.filelink" target="_blank">View File</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <p *ngIf="!loading && loanApplications.length === 0">No loan applications found.</p>
+</div>
+

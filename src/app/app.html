@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink='adminlist'>adminlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='customerlist'>customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='application-list'>Applications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='new-loan'>loanapplicationform</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" routerLink='registerc'>register</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" routerLink='home'>Home</a>
+        </li>
+        
+         
+           <li class="nav-item">
+          <a class="nav-link" routerLink='loanapplicationslist'>loan applications list</a>
+      </ul>
+      <form class="d-flex">
+      
+       
+        <button class="btn btn-primary" type="button" routerLink="login">login</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
